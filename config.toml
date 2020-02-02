@@ -2,6 +2,7 @@ baseURL = "https://colin.id"
 languageCode = "en-us"
 title = "Colin Burr"
 theme = "pulp"
+googleAnalytics = "UA-74410191-2"
 canonifyurls = true
 hasCJKLanguage = false
 
