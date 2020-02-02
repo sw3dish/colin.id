@@ -8,7 +8,7 @@ tags: [
 ]
 ---
 
-> Le mieux est l'ennemi du bien - Voltaire
+> **Le mieux est l'ennemi du bien - Voltaire**
 
 I meant to write more in 2019.
 Since 2018 had been dry on the writing front, I meant to write **anything**.
@@ -42,13 +42,13 @@ And this isn't without precedent.
 
 When I have an idea for a side project,
 I'll spend so much time in the config or down a docs hole worrying if the package I chose
-will fit version 23 that my momentum to write actual code evaporates.
+will fit version 23, that my momentum to write actual code evaporates.
 
 So for 2020, I'll not let perfection stop me from getting something on the page.
 From writing something that compiles. From achieving 75% of a goal. I'll step back,
 channel my inner Voltaire, and take the first step, even if I don't have the best shoes.
 
-I'll just start.
+**I'll just start.**
 
 And this blog is that first step for my writing. It's built with [Hugo](https://gohugo.io/),
 whose docs scared me away in the past, and [Pulp](https://github.com/koirand/pulp),
