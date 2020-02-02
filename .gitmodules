@@ -1,0 +1,3 @@
+[submodule "themes/pulp"]
+	path = themes/pulp
+	url = git@github.com:sw3dish/pulp.git
