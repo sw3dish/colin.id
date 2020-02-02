@@ -1,5 +1,6 @@
 ---
 title: "The Enemy of Good"
+description: "On writing and perfection"
 date: 2020-02-02T15:20:22-05:00
 draft: false
 tags: [
