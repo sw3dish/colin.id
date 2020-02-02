@@ -46,3 +46,10 @@ hasCJKLanguage = true
     pre = "<i class='fa fa-envelope fa-lg'></i>"
     url = "mailto:hello@colin.id"
     weight = 40
+
+[deployment]
+
+[[deployment.targets]]
+name = "colin.id"
+URL = "s3://colin.id?region=us-east-1"
+cloudFrontDistributionID = "ELCRHMT45IHA2"
