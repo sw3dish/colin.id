@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Colin Burr"
 theme = "pulp"
 canonifyurls = true
-hasCJKLanguage = true
+hasCJKLanguage = false
 
 [params]
   author = "Colin Burr"
