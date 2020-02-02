@@ -1,4 +1,4 @@
-baseURL = "https://colin.id/"
+baseURL = "https://colin.id"
 languageCode = "en-us"
 title = "Colin Burr"
 theme = "pulp"
