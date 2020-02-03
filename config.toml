@@ -5,6 +5,7 @@ theme = "pulp"
 googleAnalytics = "UA-74410191-2"
 canonifyurls = true
 hasCJKLanguage = false
+pluralizelisttitles = false
 
 [params]
   author = "Colin Burr"
