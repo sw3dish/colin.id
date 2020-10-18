@@ -1,0 +1,62 @@
+baseURL: 'https://colin.id'
+title: Colin Burr
+paginate: 5
+theme: hugo-PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpored: false
+
+googleAnalytics:
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Colin Burr
+  description: 'Thoughts on web dev, accessibility, and performance'
+  author: Colin Burr
+
+  images: "<link or path of image for opengraph, twitter-cards>"
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  comments: false
+  defaultTheme: auto
+  disableThemeToggle : false
+  disableSpecial1stPost : false
+
+
+  label:
+    text: "Home"
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi, I'm Colin! \U0001F44B"
+    Content: Sometimes I write, most of the time I don't
+
+  socialIcons:
+    - name: twitter
+      url: 'https://twitter.com/_colinburr'
+    - name: email
+      url: 'mailto:hello@colin.id'
+    - name: github
+      url: 'https://github.com/sw3dish'
+
+deployment:
+  targets:
+    - name: colin.id
+      URL: 's3://colin.id?region=us-east-1'
+      cloudFrontDistributionID: ELCRHMT45IHA2
+  matchers:
+    - pattern: ^.+\.(js|css|svg|ttf)$
+      cacheControl: 'max-age=31536000, no-transform, public'
+      gzip: true
+    - pattern: ^.+\.(png|jpg)$
+      cacheControl: 'max-age=31536000, no-transform, public'
+      gzip: true
+    - pattern: ^.+\.(html|xml|json)$
+      gzip: true
