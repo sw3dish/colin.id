@@ -9,8 +9,6 @@ tags: [
 ]
 ---
 
-> **Le mieux est l'ennemi du bien - Voltaire**
-
 I meant to write more in 2019.
 Since 2018 had been dry on the writing front, I meant to write **anything**.
 
@@ -33,7 +31,7 @@ written part of a [static site engine](https://www.github.com/sw3dish/graaff) an
 
 And while I learned a lot building `graaff`, I realized:
 
-> **Perfect is the enemy of good.** (that's what the French at the top says)
+> **Perfect is the enemy of good.**
 
 In this case, having the best static site generator kept me from putting anything on the page.
 Or at least the metaphorical page. I let myself be sidetracked from my original goal, and
