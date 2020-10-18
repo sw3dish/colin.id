@@ -6,7 +6,7 @@ theme: hugo-PaperMod
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
-buildExpored: false
+buildExpired: false
 
 googleAnalytics:
 
@@ -31,7 +31,7 @@ params:
 
 
   label:
-    text: "Home"
+    text: "Colin Burr"
 
   # home-info mode
   homeInfoParams:
