@@ -8,6 +8,8 @@ tags: [
 ]
 ---
 
+**_NOTE: This isn't the full story on polyfilling for IE11. I've written an update [here]() outlining the rest of what I found._**
+
 *Hi! Emerging from COVID-19 isolation with something that recently cropped up at work.*
 
 ## IE11
