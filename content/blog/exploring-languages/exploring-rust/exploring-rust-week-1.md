@@ -1,5 +1,5 @@
 ---
-title: "Exploring Rust -- Types, functions, control flow"
+title: "Exploring Rust - Week 1"
 date: 2020-10-24T16:20:13-04:00
 series: ["Exploring Languages", "Exploring Rust"]
 ---
@@ -19,8 +19,3 @@ Some things I like off-the-bat:
 - **`match` statements/destructuring**
 
   I've been a fan of pattern matching since I was first exposed to it with OCaml in undergrad. Every time I use `switch` in JavaScript, I think of what could've been 😩.
-
-Things that are confusing:
-
-- **Statements have semicolons, expressions don't.**
-  I guess the compiler will catch if you accidentally place a semicolon after the last expression in a function (if you mean to implicitly return)? Maybe I'm missing something here.

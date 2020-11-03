@@ -1,5 +1,5 @@
 ---
-title: "Exploring Rust -- Introduction"
+title: "Exploring Rust - Intro"
 date: 2020-10-24T16:00:42-04:00
 series: ["Exploring Languages", "Exploring Rust"]
 ---
