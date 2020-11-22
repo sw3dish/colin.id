@@ -2,6 +2,9 @@
 title: "Exploring Rust - Intro"
 date: 2020-10-24T16:00:42-04:00
 series: ["Exploring Languages", "Exploring Rust"]
+tags: [
+  "rust"
+]
 ---
 
 I'm looking at Rust first. I haven't done any memory management since sophomore year of undergrad (in C), so this should be a nice refresher on how to not leak memory.

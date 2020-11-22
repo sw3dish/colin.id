@@ -2,6 +2,9 @@
 title: "Exploring Rust - Week 1"
 date: 2020-10-24T16:20:13-04:00
 series: ["Exploring Languages", "Exploring Rust"]
+tags: [
+  "rust"
+]
 ---
 I've read through Chapters 1 - 3 of ["The Book"](https://doc.rust-lang.org/book/).
 
