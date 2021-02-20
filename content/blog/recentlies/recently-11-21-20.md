@@ -1,5 +1,5 @@
 ---
-title: "Recently: November 21st"
+title: "Recently: November 21st, 2020"
 date: 2020-11-21T15:40:30-05:00
 draft: false
 tags: [
