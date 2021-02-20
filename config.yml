@@ -40,8 +40,8 @@ params:
     Content: Sometimes I write, most of the time I don't
 
   socialIcons:
-    - name: twitter
-      url: 'https://twitter.com/_colinburr'
+    - name: instagram
+      url: 'https://instagram.com/granary.film'
     - name: email
       url: 'mailto:hello@colin.id'
     - name: github
