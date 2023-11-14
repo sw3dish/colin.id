@@ -1,0 +1,11 @@
+---%%%---
+title = "Home"
+description = "Colin on the web"
+published_date = "2023-05-18"
+template = "page"
+---%%%---
+<h1>Hi, I'm Colin.</h1>
+<p>
+  I make websites and other things for the web.
+</p>
+<p><a href="/topics">Here</a>, I write. And <a href="/now">here</a>, you can see what I'm up to now.</p>
