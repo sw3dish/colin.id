@@ -3,6 +3,7 @@ title = "Home"
 description = "Colin on the web"
 published_date = "2023-05-18"
 template = "page"
+hide_footer = true
 ---%%%---
 <h1>Hi, I'm Colin.</h1>
 <p>

@@ -3,6 +3,7 @@ title = "Example"
 description = "Example"
 published_date = "2023-04-06"
 template = "post"
+draft = true
 ---%%%---
 An h1 header
 ============

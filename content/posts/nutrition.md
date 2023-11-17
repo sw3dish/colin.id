@@ -1,3 +1,10 @@
+---%%%---
+title = "Nutrition"
+description = "My nutrition journey and principles"
+published_date = "2023-06-01"
+template = "post"
+draft = true
+---%%%---
 # Nutrition: a spectrum
 
 This is a deep dive into how I eat, currently and in the past. I'm also going
