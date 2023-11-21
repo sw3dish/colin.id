@@ -4,8 +4,10 @@ description = "Recent writing"
 published_date = "2023-11-17"
 template = "page"
 ---%%%---
+<% import Statisch.HTMLHelpers %>
 <%= for post <- @posts do%>
 <article class="posts">
-  <time datetime="<%= post.metadata.published_date %>"><em><%= post.metadata.published_date %></em></time> <a href="/"><%= post.metadata.title %></a> 
+  <time datetime="<%= post.metadata.published_date %>"><em><%= post.metadata.published_date %></em></time>
+  <a href="<%= get_url(post.output_path) %>"><%= post.metadata.title %></a> 
 </article>
 <% end %>

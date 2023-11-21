@@ -1,3 +1,4 @@
+<% import Statisch.HTMLHelpers%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,7 +51,6 @@
         text-decoration: none;
         padding: 0 1rem;
       }
-
       a {
         color: var(--text-color);
         text-decoration: none;
@@ -65,6 +65,9 @@
           background-color: var(--text-color);
           color: var(--background-color);
           text-decoration:none
+      }
+      code {
+        font-size: 1rem;
       }
       h1, h2, h3, h4, h5, h6 {
         line-height: 1.2;
@@ -131,16 +134,16 @@
     <header>
       <nav>
         <ul>
-          <li <%= if @output_path === "./output/index.html", do: "class='active-nav-item'"%>>
+          <li <%= if get_url(@output_path) === "/", do: "class='active-nav-item'"%>>
             <a href="/">colin.id</a>
           </li>
-          <li <%= if @output_path === "./output/posts/index.html", do: "class='active-nav-item'"%>>
+          <li <%= if get_url(@output_path) === "/posts", do: "class='active-nav-item'"%>>
             <a href="/posts" >Posts</a>
           </li>
-          <li <%= if @output_path === "./output/projects/index.html", do: "class='active-nav-item'"%>>
+          <li <%= if get_url(@output_path) === "/projects", do: "class='active-nav-item'"%>>
             <a href="/projects">Projects</a>
           </li>
-          <li <%= if @output_path === "./output/now/index.html", do: "class='active-nav-item'"%>>
+          <li <%= if get_url(@output_path) === "/now", do: "class='active-nav-item'"%>>
             <a href="/now">Now</a>
           </li>
         </ul>
