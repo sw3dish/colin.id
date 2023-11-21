@@ -128,9 +128,24 @@
         flex: 0 0 7rem;
         margin-right: 1.5rem;
       }
+      .skip-to-main-content-link {
+        position: absolute;
+        left: -9999px;
+        z-index: 999;
+        padding: 1em;
+        background-color: black;
+        color: white;
+        opacity: 0;
+      }
+      .skip-to-main-content-link:focus {
+        left: 0;
+        transform: translateX(1rem);
+        opacity: 1;
+      }
     </style>
   </head>
   <body>
+    <a href="#main" class="skip-to-main-content-link">Skip to main content</a>
     <header>
       <nav>
         <ul>
@@ -150,7 +165,7 @@
       </nav>
     </header>
     <hr>
-    <main>
+    <main id="main">
       <article>
   <h1>Saag Tofu</h1>
   <p><em>Posted on <time datetime="2023-06-07">2023-06-07</em></p>
