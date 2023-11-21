@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - colin.id</title>
+    <meta name="description" content="Projects I'm working on/have worked on">
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      * {
+        margin: 0;
+      }
+
+      img, picture, video, canvas, svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      :root {
+        --max-width: 45rem;
+        --font-main: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+        --font-size: 20px;
+        --background-color: #fff;
+        --text-color: #000;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background-color: #000;
+          --text-color: #fff;
+        }
+      }
+
+      html, body {
+        height: 100%
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--background-color);
+        margin: 0px auto;
+        max-width: var(--max-width);
+        line-height: 1.5;
+        font-family: var(--font-main);
+        font-size: var(--font-size);
+        color: var(--text-color);
+        text-decoration: none;
+        padding: 0 1rem;
+      }
+
+      a {
+        color: var(--text-color);
+        text-decoration: none;
+      }
+      a:before {
+          content:"{"
+      }
+      a:after {
+          content:"}"
+      }
+      a:hover, a:focus {
+          background-color: var(--text-color);
+          color: var(--background-color);
+          text-decoration:none
+      }
+      h1, h2, h3, h4, h5, h6 {
+        line-height: 1.2;
+        margin: 1rem 0;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      h2 {
+        font-size: 1.17em;
+      }
+
+      h3 {
+        font-size: 1em;
+      }
+
+      h4 {
+        font-size: 0.83em;
+      }
+
+      header nav ul{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        padding: 0;
+        margin: 0.75rem 0;
+      }
+      header nav ul li {
+        list-style: none;
+      }
+      header nav ul li.active-nav-item a {
+        background-color: var(--text-color);
+        color: var(--background-color);
+      }
+      main {
+        margin: 1rem 0;
+        flex: 1 0 auto;
+      }
+      footer {
+        flex-shrink: 0;
+        font-size: 16px;
+      }
+      footer > p {
+        text-align: right;
+      }
+      hr {
+        margin: 0;
+      }
+      p {
+        margin: .5rem 0;
+      }
+      article.posts {
+        display: flex;
+      }
+      article.posts time {
+        flex: 0 0 7rem;
+        margin-right: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li >
+            <a href="/">colin.id</a>
+          </li>
+          <li >
+            <a href="/posts" >Posts</a>
+          </li>
+          <li class='active-nav-item'>
+            <a href="/projects">Projects</a>
+          </li>
+          <li >
+            <a href="/now">Now</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <hr>
+    <main>
+      <h2>
+Current</h2>
+<ul>
+  <li>
+<a href="https://github.com/sw3dish/statisch">statisch</a> - Static site generator focusing on
+  baked-in accessibility and performance (used to make this site!)  </li>
+  <li>
+<a href="https://github.com/sw3dish/bookmark">Bookmark</a> - Link gathering/storage/archival platform
+  (in need of a better name)  </li>
+</ul>
+<h2>
+Past</h2>
+<ul>
+  <li>
+<a href="https://github.com/sw3dish/graaff">graaff</a> - Another static site generator! This one in JS  </li>
+  <li>
+<a href="https://github.com/sw3dish/do_we_get_tacos_today">Do we get tacos today?</a> - A single page that did a single thing:
+  tell you if the Rockies scored seven runs (and you got free tacos)  </li>
+  <li>
+<a href="https://github.com/sw3dish/plateau">Plateau</a> - A flat-file CMS  </li>
+  <li>
+<a href="https://github.com/sw3dish/umd-web-api-php">umd-web-api-php</a> - A PHP wrapper for the UMD open API  </li>
+</ul>
+
+
+    </main>
+    
+    <hr>
+    <footer>
+      <p><em>Made with <a href="https://github.com/sw3dish/statisch">statisch</a></em></p>
+    </footer>
+    
+  </body>
+</html>
