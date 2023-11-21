@@ -1,31 +1,30 @@
 ---%%%---
 title = "Now"
 description = "What's Colin up to?"
-published_date = "2023-11-13"
+published_date = "2023-11-20"
 template = "page"
 ---%%%---
-# Now
+_Updated on 2023-11-20_
 
-_Updated on 2023-05-2024_
+## Using Elixir
+I've finally finished [statisch](https://github.com/sw3dish/statisch) which I used to generate this site.
+I'd been learning about Ecto and its support of embedded schemas and used changesets to enforce validation on my structs.
 
-## Learning Elixir
-I've been interested in functional languages for a while and have bounced around between a few.
-For now, I've landed on Elixir -- it has a nice looking syntax (I was a fan of Ruby for a while) and the BEAM is appealing.
-I'm working through [Programming Elixir](https://pragprog.com/titles/elixir16/programming-elixir-1-6/) and
-[Elixir School](https://elixirschool.com).
+There are a few more improvements I'd like to make -- I miss Django's templating language and am thinking about writing a
+DSL to extend EEx to add support for partials and blocks. I also want to move it from an `escript` to a full-blown
+`mix` application, with commands to create a new site, new post, etc. and deploy.
 
-Other languages I considered were F# (static typing) and Racket (I should learn a Lisp).
+After the generation part is finished, I want to start enforcing accessibility and performance
+as well as having the site be automatically archived on Archive.org.
 
-## Olympic weightlifting
-Since college, I've been programming powerlifting-style workouts. This has gotten me some pretty good results in terms of
-squat, bench, and deadlift maxes, and I'm proud of what I've accomplished after being fairly unathletic as a kid and being
-extremely sedentary in college.
+I'm using Phoenix to create a bookmarking/link + article archival tool along the lines of Pinboard. Elixir + Phoenix are a joy
+to use and, with a sprinkling of [Alpine](https://alpinejs.dev/), make it easy to get stuff done.
 
-However, I'd like to look and feel more athletic, so I've started working with a coach at the gym I go to on both
-Olympic weightlifting (the snatch + clean and jerk), and "CrossFit"/conditioning work.
+## Weightlifting
+I've been doing the Olympic lifts (at least the snatch and clean) for the last 6 months. Definitely enjoying them, definitely
+need to practice more! But I've hit a 135 snatch and a 215 clean, so I'm happy with how I'm picking them up.
 
-## Some side projects
-I've got a few ideas for side projects, but trying really hard to execute on something reasonable instead of
-getting overwhelmed by possibility. I'm pacing myself to avoid feeling forced to work on projects as well.
-
-Currently, I'm finishing up [statisch](https://github.com/sw3dish/statisch), the static site generator I used to make this site.
+The programming that I've been doing has also been doing wonders for my deadlift -- 
+hit a 450 sumo deadlift and a 435 conventional deadlift -- after being stuck for a couple years at 405.
+Squat holds strong at a 365 high-bar squat and overhead press is at a nice 135 for a triple.
+I'd love to improve my bench, which sits at 235, but the olympic lifts are taking precedence.
