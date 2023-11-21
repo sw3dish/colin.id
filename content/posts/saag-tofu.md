@@ -6,7 +6,7 @@ template = "post"
 ---%%%---
 
 ## Ingredients
-For the tofu
+### For the tofu
 - 9 oz extra-firm tofu
 - 1 tbsp olive oil
 - 1 tbsp cornstarch 
@@ -15,7 +15,7 @@ For the tofu
 - 1/2 tsp white pepper
 - Salt and pepper
 
-For the saag
+### For the saag
 - 16 oz baby spinach
 - 1 tsp minced garlic
 - 1/2 tbsp minced ginger
@@ -27,12 +27,12 @@ For the saag
 - 1 tbsp coconut oil
 - Salt and pepper
 
-Toppings
+### Toppings
 - Diced onion
 - Diced tomato
 
 ## Instructions
-For the tofu
+### For the tofu
 1. Preheat the oven to 400F.
 2. Slice tofu in half into 2 large flat planks.
 3. Salt tofu lightly, place between paper towels, and press using a flat weight. (A heavy pot on a baking sheet usually works for me.)
@@ -43,7 +43,7 @@ For the tofu
 8. Place on a parchment paper-lined baking sheet, ensuring no pieces touch.
 9. Bake for 30 minutes, turning every 10 minutes.
 
-For the saag
+### For the saag
 1. Finely chop spinach using a food processor.
 2. Dice onion and chile.
 3. Sauté onion in coconut oil over medium heat until softened.
@@ -52,5 +52,5 @@ For the saag
 6. Add spinach and coconut milk.
 7. Continue cooking until most of the liquid is absorbed, season with salt and pepper to taste.
 
-Assemble
+### Assemble
 1. Combine saag and tofu. Serve immediately, topping with diced onion and diced tomato.

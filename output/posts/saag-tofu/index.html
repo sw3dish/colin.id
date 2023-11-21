@@ -6,23 +6,53 @@
     <title>Saag Tofu - colin.id</title>
     <meta name="description" content="Replace paneer with tofu to use up your spinach that's going bad">
     <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      * {
+        margin: 0;
+      }
+
+      img, picture, video, canvas, svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      :root {
+        --max-width: 45rem;
+        --font-main: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+        --font-size: 20px;
+        --background-color: #fff;
+        --text-color: #000;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background-color: #000;
+          --text-color: #fff;
+        }
+      }
+
       html, body {
         height: 100%
       }
       body {
         display: flex;
         flex-direction: column;
-        background-color: #EEE;
+        background-color: var(--background-color);
         margin: 0px auto;
-        max-width: 650px;
-        line-height: 1.6;
-        font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
-        font-size: 20px;
-        color: #444;
+        max-width: var(--max-width);
+        line-height: 1.5;
+        font-family: var(--font-main);
+        font-size: var(--font-size);
+        color: var(--text-color);
         text-decoration: none;
+        padding: 0 1rem;
       }
+
       a {
-        color: #444;
+        color: var(--text-color);
         text-decoration: none;
       }
       a:before {
@@ -32,18 +62,49 @@
           content:"}"
       }
       a:hover, a:focus {
-          background-color:#000;
-          color:#fff;
+          background-color: var(--text-color);
+          color: var(--background-color);
           text-decoration:none
       }
       h1, h2, h3, h4, h5, h6 {
         line-height: 1.2;
-      }
-      main {
-        margin: 40px auto;
-        flex: 1 0 auto;
+        margin: 1rem 0;
       }
 
+      h1 {
+        font-size: 1.5em;
+      }
+
+      h2 {
+        font-size: 1.17em;
+      }
+
+      h3 {
+        font-size: 1em;
+      }
+
+      h4 {
+        font-size: 0.83em;
+      }
+
+      header nav ul{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        padding: 0;
+        margin: 0.75rem 0;
+      }
+      header nav ul li {
+        list-style: none;
+      }
+      header nav ul li.active-nav-item a {
+        background-color: var(--text-color);
+        color: var(--background-color);
+      }
+      main {
+        margin: 1rem 0;
+        flex: 1 0 auto;
+      }
       footer {
         flex-shrink: 0;
         font-size: 16px;
@@ -54,9 +115,38 @@
       hr {
         margin: 0;
       }
+      p {
+        margin: .5rem 0;
+      }
+      article.posts {
+        display: flex;
+      }
+      article.posts time {
+        flex: 0 0 7rem;
+        margin-right: 1.5rem;
+      }
     </style>
   </head>
   <body>
+    <header>
+      <nav>
+        <ul>
+          <li >
+            <a href="/">colin.id</a>
+          </li>
+          <li >
+            <a href="/posts" >Posts</a>
+          </li>
+          <li >
+            <a href="/projects">Projects</a>
+          </li>
+          <li >
+            <a href="/now">Now</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <hr>
     <main>
       <article>
   <h1>Saag Tofu</h1>
@@ -64,8 +154,8 @@
   <hr>
   <h2>
 Ingredients</h2>
-<p>
-For the tofu</p>
+<h3>
+For the tofu</h3>
 <ul>
   <li>
 9 oz extra-firm tofu  </li>
@@ -82,8 +172,8 @@ For the tofu</p>
   <li>
 Salt and pepper  </li>
 </ul>
-<p>
-For the saag</p>
+<h3>
+For the saag</h3>
 <ul>
   <li>
 16 oz baby spinach  </li>
@@ -106,8 +196,8 @@ For the saag</p>
   <li>
 Salt and pepper  </li>
 </ul>
-<p>
-Toppings</p>
+<h3>
+Toppings</h3>
 <ul>
   <li>
 Diced onion  </li>
@@ -116,8 +206,8 @@ Diced tomato  </li>
 </ul>
 <h2>
 Instructions</h2>
-<p>
-For the tofu</p>
+<h3>
+For the tofu</h3>
 <ol>
   <li>
 Preheat the oven to 400F.  </li>
@@ -138,8 +228,8 @@ Place on a parchment paper-lined baking sheet, ensuring no pieces touch.  </li>
   <li>
 Bake for 30 minutes, turning every 10 minutes.  </li>
 </ol>
-<p>
-For the saag</p>
+<h3>
+For the saag</h3>
 <ol>
   <li>
 Finely chop spinach using a food processor.  </li>
@@ -156,8 +246,8 @@ Add spinach and coconut milk.  </li>
   <li>
 Continue cooking until most of the liquid is absorbed, season with salt and pepper to taste.  </li>
 </ol>
-<p>
-Assemble</p>
+<h3>
+Assemble</h3>
 <ol>
   <li>
 Combine saag and tofu. Serve immediately, topping with diced onion and diced tomato.  </li>
