@@ -68,6 +68,11 @@
           color: var(--background-color);
           text-decoration:none
       }
+      pre {
+        background-color: #222;
+        overflow-x: scroll;
+        padding: 1rem;
+      }
       code {
         font-size: 1rem;
       }
