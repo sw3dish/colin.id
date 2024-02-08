@@ -3,6 +3,7 @@ title = "Saag Tofu"
 description = "Replace paneer with tofu to use up your spinach that's going bad"
 published_date = "2023-06-07"
 template = "post"
+tags = [ "food", "recipes"]
 ---%%%---
 
 ## Ingredients
