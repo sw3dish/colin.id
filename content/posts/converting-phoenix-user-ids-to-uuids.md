@@ -7,7 +7,6 @@ description = """\
 published_date = "2024-02-06"
 template = "post"
 tags = [ "elixir", "programming", "phoenix"]
-draft = true
 ---%%%---
 
 _Note: This post uses Phoenix 1.7.10, Elixir 1.15.7, and OTP 26.2.1 as well as Postgres 16.0_
@@ -153,16 +152,70 @@ from(rt in "registration_tokens",
 |> Repo.update_all([])
 ```
 
-And that's it for the first migration! Note that we haven't done anything destructive yet,
+And that's it for the first migration! Note that I haven't done anything destructive yet,
 and can remove the `:binary_id` columns without losing any data.
 
-The second migration will be the destructive one, so consider whether you trust me and maybe backup your DB.
+## Here be destructive database changes
 
-Here, we'll drop our FK constraints so we can later drop the columns that they reference:
+The second migration will be the destructive one, so consider whether you trust me and maybe backup your DB.
+We'll be removing the existing FK relations here, so make sure that the mapping you did in the
+first migration passes a sanity check.
+
+Here, I'll drop our FK constraints so I can drop the columns that they reference:
 
 ```
 drop(constraint(:registration_tokens, "registration_tokens_generated_by_user_id_fkey"))
 drop(constraint(:registration_tokens, "registration_tokens_used_by_user_id_fkey"))
 ```
 
+Then, I remove the old id and convert the new `:binary_id` to be the new primary key, renaming it to be
+the new `id` column
 
+```
+alter table(:users) do
+  remove :id
+  modify :uuid, :binary_id, primary_key: true
+end
+
+rename table(:users), :uuid, to: :id
+```
+
+and remove the FK columns,
+
+```
+alter table(:registration_tokens) do
+  remove :generated_by_user_id
+  remove :used_by_user_id
+end
+```
+
+rename the `<FK>_uuid` columns to be `<FK>_id`,
+
+```
+rename table(:registration_tokens), :generated_by_user_uuid, to: :generated_by_user_id
+rename table(:registration_tokens), :used_by_user_uuid, to: :used_by_user_id
+
+flush()
+```
+
+and finally make them into FKs to `:users` using `references`
+
+```
+alter table(:registration_tokens) do
+  modify :generated_by_user_id, references(:users, type: :binary_id)
+  modify :used_by_user_id, references(:users, type: :binary_id)
+end
+```
+
+Also, I'll need to make a slight change to my `User` schema to denote
+that the primary key is now a `:binary_key`
+
+```
+@primary_key {:id, :binary_id, autogenerate: true}
+```
+
+However, I can't add this too soon, or we'll have an issue using Ecto to
+map our FK relations in the first migration.
+
+And at long last, I'm done! I now have UUIDs for my `User`s and have retained
+all of the data relations to my other tables.

@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converting Phoenix user ids from :integer to :binary_id - colin.id</title>
+    <meta name="description" content="How to convert Phoenix ids from :integer to :binary_id (if you forgot to do this when you used phx.gen.auth)
+">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐻</text></svg>">
+    <meta name="generator" content="statisch">
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      * {
+        margin: 0;
+      }
+
+      img, picture, video, canvas, svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      :root {
+        --max-width: 45rem;
+        --font-main: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+        --font-size: 20px;
+        --background-color: #fffff8;
+        --text-color: #111;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background-color: #111;
+          --text-color: #fffff8;
+        }
+      }
+
+      html, body {
+        height: 100%
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--background-color);
+        margin: 0px auto;
+        max-width: var(--max-width);
+        line-height: 1.5;
+        font-family: var(--font-main);
+        font-size: var(--font-size);
+        color: var(--text-color);
+        text-decoration: none;
+        padding: 0 1rem;
+      }
+      a {
+        color: var(--text-color);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      a:before {
+          content:"{"
+      }
+      a:after {
+          content:"}"
+      }
+      a:hover, a:focus {
+          background-color: var(--text-color);
+          color: var(--background-color);
+          text-decoration:none
+      }
+      pre {
+        overflow-x: scroll;
+      }
+      pre > code {
+        display: block;
+        margin-left: 2rem;
+        font-size: 0.95rem;
+      }
+      code {
+        font-size: 1rem;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        line-height: 1.2;
+        margin: 1.5rem 0;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      h2 {
+        font-size: 1.17em;
+      }
+
+      h3 {
+        font-size: 1em;
+      }
+
+      h4 {
+        font-size: 0.83em;
+      }
+
+      header nav ul{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        padding: 0;
+        margin: 0.75rem 0;
+      }
+      header nav ul li {
+        list-style: none;
+      }
+      header nav ul li.active-nav-item a {
+        background-color: var(--text-color);
+        color: var(--background-color);
+      }
+      main {
+        margin: 1rem 0;
+        flex: 1 0 auto;
+      }
+      footer {
+        flex-shrink: 0;
+        font-size: 16px;
+      }
+      footer > p {
+        text-align: right;
+      }
+      hr {
+        margin: 0;
+      }
+      p {
+        margin: 1.5rem 0;
+      }
+      article.posts {
+        display: flex;
+      }
+      article.posts time {
+        flex: 0 0 7rem;
+        margin-right: 1.5rem;
+      }
+      .skip-to-main-content-link {
+        position: absolute;
+        left: -9999px;
+        z-index: 999;
+        padding: 1em;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        opacity: 0;
+      }
+      .skip-to-main-content-link:focus {
+        left: 1rem;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main" class="skip-to-main-content-link">Skip to main content</a>
+    <header>
+      <nav>
+        <ul>
+          <li >
+            <a href="/">colin.id</a>
+          </li>
+          <li >
+            <a href="/posts" >Posts</a>
+          </li>
+          <li >
+            <a href="/projects">Projects</a>
+          </li>
+          <li >
+            <a href="/now">Now</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <hr>
+    <main id="main">
+      <article>
+  <h1>Converting Phoenix user ids from :integer to :binary_id</h1>
+  <p><em>Posted on <time datetime="2024-02-06">2024-02-06</em></p>
+  <hr>
+  <p>
+<em>Note: This post uses Phoenix 1.7.10, Elixir 1.15.7, and OTP 26.2.1 as well as Postgres 16.0</em></p>
+<h2>
+I’ve made a mistake</h2>
+<p>
+I’ve been working on a bookmarking app (working name of Bookmark, because I’m a thought-leader)
+using Elixir and Phoenix.
+Like many apps, I’m supporting multiple users
+(even though I’ll probably be the only one using it (it’s custom-made for my needs, so don’t feel bad for me)).
+So, I need (at minimum) pages for user sign in, user registration, forgotten passwords, account confirmation,
+password resets, sign out, and settings.</p>
+<p>
+This sounds like a lot of work and I’m coming from Django, where auth is pretty built out, so
+<code class="inline">phx.gen.auth</code> was welcome in Phoenix. <code class="inline">phx.gen.auth</code> is a generator that creates
+a “flexible, pre-built authentication system” for your app. It creates controllers, schemas, contexts,
+and views (either LiveViews or dead views) for your app’s auth.</p>
+<p>
+This is great, but comes with some options that aren’t covered in the
+<a href="https://hexdocs.pm/phoenix/1.7.10/mix_phx_gen_auth.html">hexdocs guide</a>
+(but to be fair, are covered in the separate <a href="https://hexdocs.pm/phoenix/Mix.Tasks.Phx.Gen.Auth.html">Mix.Tasks.Phx.Gen.Auth docs</a>
+– maybe I should read the docs in full before making large application decisions 🤷).</p>
+<p>
+The option I missed was <code class="inline">--binary-id</code>. This uses <code class="inline">:binary_id</code> (an <code class="inline">Ecto.UUID</code>)
+for the primary key of the <code class="inline">:users</code> table
+(and the <code class="inline">:users_tokens</code> table, but I haven’t converted that yet 🙃)
+in the migration that <code class="inline">phx.gen.auth</code> generates.</p>
+<p>
+Is this a huge mistake? No – but I did use the <code class="inline">--binary-id</code> flag for the 
+other tables that I generated (using <code class="inline">phx.gen.html</code>! How handy!),
+and I’d like to keep this constant throughout the app.
+There are other reasons to use UUIDs as identifiers, but I’ll leave you to
+search this on your own time.</p>
+<h2>
+What I’ve got to do about it</h2>
+<p>
+So, at this point in the app’s life, I have a few tables other than my <code class="inline">:users</code>
+table. What they’re named and what they do aren’t super relevant (though I am excited to
+dive into the application in other posts), since the plan is the same for each foreign key (FK) to <code class="inline">:users</code>:</p>
+<ol>
+  <li>
+Create a new column of type <code class="inline">:binary_id</code> that will be the new UUID primary key (PK) for <code class="inline">:users</code>.  </li>
+  <li>
+Create columns for each current FK to <code class="inline">:users</code> but using <code class="inline">:binary_id</code> as well.
+If my <code class="inline">:links</code> table has a <code class="inline">:user_id</code> column, I’ll need a <code class="inline">:user_uuid</code> column – and so on for other FKs.  </li>
+  <li>
+Generate UUIDs using <code class="inline">Ecto.UUID</code>  </li>
+  <li>
+Map the existing <code class="inline">id</code> -&gt; <code class="inline">&lt;FK&gt;_id</code> values to <code class="inline">uuid</code> -&gt; <code class="inline">&lt;FK&gt;_uuid</code>.  </li>
+  <li>
+Drop the existing foreign key constraints  </li>
+  <li>
+Drop the existing <code class="inline">id</code> and <code class="inline">&lt;FK&gt;_id</code> columns  </li>
+  <li>
+Rename the <code class="inline">uuid</code> and <code class="inline">&lt;FK&gt;_uuid</code> columns to <code class="inline">id</code> and <code class="inline">&lt;FK&gt;_id</code>  </li>
+  <li>
+Add new foreign key constraints  </li>
+  <li>
+Modify the Ecto schema to mark the new primary key of <code class="inline">:users</code> as a <code class="inline">:binary_id</code>  </li>
+</ol>
+<h2>
+More in-depth example with code!</h2>
+<p>
+As an example, I’ll use my <code class="inline">:registration_tokens</code> table that stores tokens used in the
+account registration flow. The <code class="inline">:registration_tokens</code> table has two (count ‘em two!) foreign keys to <code class="inline">:users</code>.</p>
+<p>
+To begin, the <code class="inline">:users</code> table looks like this:</p>
+<pre><code>Table &quot;public.users&quot;
+ 
+     Column      |              Type              | Collation | Nullable | Default
+-----------------+--------------------------------+-----------+----------+---------
+ id              | bigint                         |           | not null | nextval(&#39;users_id_seq&#39;::regclass)
+ email           | citext                         |           | not null |
+ hashed_password | character varying(255)         |           | not null |
+ inserted_at     | timestamp(0) without time zone |           | not null |
+ updated_at      | timestamp(0) without time zone |           | not null |
+Indexes:
+    &quot;users_pkey&quot; PRIMARY KEY, btree (id)
+    &quot;users_email_index&quot; UNIQUE, btree (email)</code></pre>
+<p>
+and the <code class="inline">:registration_tokens</code> table looks like this (minus some irrelevant columns):</p>
+<pre><code>Table &quot;public.registration_tokens&quot;
+
+        Column        |              Type              | Collation | Nullable |                     Default
+----------------------+--------------------------------+-----------+----------+-------------------------------------------------
+ id                   | bigint                         |           | not null | nextval(&#39;registration_tokens_id_seq&#39;::regclass)
+ inserted_at          | timestamp(0) without time zone |           | not null |
+ updated_at           | timestamp(0) without time zone |           | not null |
+ generated_by_user_id | bigint                         |           |          |
+ used_by_user_id      | bigint                         |           |          |
+Indexes:
+    &quot;registration_tokens_pkey&quot; PRIMARY KEY, btree (id)
+Foreign-key constraints:
+    &quot;registration_tokens_generated_by_user_id_fkey&quot; FOREIGN KEY (generated_by_user_id) REFERENCES users(id)
+    &quot;registration_tokens_used_by_user_id_fkey&quot; FOREIGN KEY (used_by_user_id) REFERENCES users(id)</code></pre>
+<p>
+I’ll need two migrations for this, run separately.</p>
+<p>
+In the first migration, I need to create the new UUID column to be the new primary key on the <code class="inline">:users</code> table.</p>
+<pre><code>alter table(:users) do
+  add :uuid, :binary_id
+end</code></pre>
+<p>
+I’ll also create UUID columns for the foreign key to the <code class="inline">:users</code> table on the <code class="inline">:registration_tokens</code> table.</p>
+<pre><code>alter table(:registration_tokens) do
+  add :generated_by_user_uuid, :binary_id
+  add :used_by_user_uuid, :binary_id
+end
+
+flush()  # this makes sure the columns are available further into the migration</code></pre>
+<p>
+Then, I’ll create the new UUIDs for each row in <code class="inline">:users</code> using <code class="inline">Ecto.UUID</code>.</p>
+<pre><code>users = from(u in User, select: u) |&gt; Repo.all()
+
+Enum.each(users, fn user -&gt;
+  uuid = Ecto.UUID.bingenerate()
+
+  from(u in &quot;users&quot;, where: u.id == ^user.id, update: [set: [uuid: ^uuid]])
+  |&gt; Repo.update_all([])
+end)</code></pre>
+<p>
+And map the existing <code class="inline">:users.id</code> relations to the new <code class="inline">uuid</code> field</p>
+<pre><code>from(rt in &quot;registration_tokens&quot;,
+  join: u in &quot;users&quot;,
+  on: rt.generated_by_user_id == u.id,
+  update: [set: [generated_by_user_uuid: u.uuid]]
+)
+|&gt; Repo.update_all([])
+
+from(rt in &quot;registration_tokens&quot;,
+  join: u in &quot;users&quot;,
+  on: rt.used_by_user_id == u.id,
+  update: [set: [used_by_user_uuid: u.uuid]]
+)
+|&gt; Repo.update_all([])</code></pre>
+<p>
+And that’s it for the first migration! Note that I haven’t done anything destructive yet,
+and can remove the <code class="inline">:binary_id</code> columns without losing any data.</p>
+<h2>
+Here be destructive database changes</h2>
+<p>
+The second migration will be the destructive one, so consider whether you trust me and maybe backup your DB.
+We’ll be removing the existing FK relations here, so make sure that the mapping you did in the
+first migration passes a sanity check.</p>
+<p>
+Here, I’ll drop our FK constraints so I can drop the columns that they reference:</p>
+<pre><code>drop(constraint(:registration_tokens, &quot;registration_tokens_generated_by_user_id_fkey&quot;))
+drop(constraint(:registration_tokens, &quot;registration_tokens_used_by_user_id_fkey&quot;))</code></pre>
+<p>
+Then, I remove the old id and convert the new <code class="inline">:binary_id</code> to be the new primary key, renaming it to be
+the new <code class="inline">id</code> column</p>
+<pre><code>alter table(:users) do
+  remove :id
+  modify :uuid, :binary_id, primary_key: true
+end
+
+rename table(:users), :uuid, to: :id</code></pre>
+<p>
+and remove the FK columns,</p>
+<pre><code>alter table(:registration_tokens) do
+  remove :generated_by_user_id
+  remove :used_by_user_id
+end</code></pre>
+<p>
+rename the <code class="inline">&lt;FK&gt;_uuid</code> columns to be <code class="inline">&lt;FK&gt;_id</code>,</p>
+<pre><code>rename table(:registration_tokens), :generated_by_user_uuid, to: :generated_by_user_id
+rename table(:registration_tokens), :used_by_user_uuid, to: :used_by_user_id
+
+flush()</code></pre>
+<p>
+and finally make them into FKs to <code class="inline">:users</code> using <code class="inline">references</code></p>
+<pre><code>alter table(:registration_tokens) do
+  modify :generated_by_user_id, references(:users, type: :binary_id)
+  modify :used_by_user_id, references(:users, type: :binary_id)
+end</code></pre>
+<p>
+Also, I’ll need to make a slight change to my <code class="inline">User</code> schema to denote
+that the primary key is now a <code class="inline">:binary_key</code></p>
+<pre><code>@primary_key {:id, :binary_id, autogenerate: true}</code></pre>
+<p>
+However, I can’t add this too soon, or we’ll have an issue using Ecto to
+map our FK relations in the first migration.</p>
+<p>
+And at long last, I’m done! I now have UUIDs for my <code class="inline">User</code>s and have retained
+all of the data relations to my other tables.</p>
+
+</article>
+
+    </main>
+    
+    <hr>
+    <footer>
+      <p><em>Made with <a href="https://github.com/sw3dish/statisch">statisch</a></em></p>
+    </footer>
+    
+  </body>
+</html>
