@@ -1,30 +1,34 @@
 ---%%%---
 title = "Now"
 description = "What's Colin up to?"
-published_date = "2023-11-20"
+published_date = "2024-02-08"
 template = "page"
 ---%%%---
 _Updated on 2023-11-20_
 
-## Using Elixir
-I've finally finished [statisch](https://github.com/sw3dish/statisch) which I used to generate this site.
-I'd been learning about Ecto and its support of embedded schemas and used changesets to enforce validation on my structs.
+## Developing bookmark
 
-There are a few more improvements I'd like to make -- I miss Django's templating language and am thinking about writing a
-DSL to extend EEx to add support for partials and blocks. I also want to move it from an `escript` to a full-blown
-`mix` application, with commands to create a new site, new post, etc. and deploy.
+Bookmark is my bookmarking/link + archive archival/email roundup tool that I'm building
+to have a replacement for Pinboard. I'm enjoying using Elixir + Phoenix and am
+leaning towards a lean/simple UI embracing page transitions and little JS. 
+I'm having a bad reaction to the amount of JS I have to write at work and want something
+easy to work on and easy to use.
 
-After the generation part is finished, I want to start enforcing accessibility and performance
-as well as having the site be automatically archived on Archive.org.
+## Improving statisch
 
-I'm using Phoenix to create a bookmarking/link + article archival tool along the lines of Pinboard. Elixir + Phoenix are a joy
-to use and, with a sprinkling of [Alpine](https://alpinejs.dev/), make it easy to get stuff done.
+I think statisch, the static site/blogging platform this site is built with, needs
+a rewrite/some rearchitecting. I want to add tags, which to me calls for the concept
+of collections of items with a page that lists all of the items in that collection. This could
+be a tag like "recipes" or the posts from the month of June or all posts ever created.
 
-## Weightlifting
-I've been doing the Olympic lifts (at least the snatch and clean) for the last 6 months. Definitely enjoying them, definitely
-need to practice more! But I've hit a 135 snatch and a 215 clean, so I'm happy with how I'm picking them up.
+Right now, I have a hacked-together method that creates the `/posts` page -- this 
+can probably be repurposed for collections.
 
-The programming that I've been doing has also been doing wonders for my deadlift -- 
-hit a 450 sumo deadlift and a 435 conventional deadlift -- after being stuck for a couple years at 405.
-Squat holds strong at a 365 high-bar squat and overhead press is at a nice 135 for a triple.
-I'd love to improve my bench, which sits at 235, but the olympic lifts are taking precedence.
+## Bodybuilding/aesthetics
+After a few months of learning the Olympic lifts, I've admitted to myself a dirty truth --
+I don't care about competition, I just care about aesthetics. And that's ok.
+
+The gym for me is meditative. I want an hour of concentration on the physical, something
+that I don't touch in my job or most of my other hobbies. I want to move at my own pace
+and explore what makes me feel more athletic and healthy. I want the freedom to choose what I do
+based on what and how I'm feeling, physically and mentally.
