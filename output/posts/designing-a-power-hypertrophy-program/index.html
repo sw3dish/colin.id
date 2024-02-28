@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designing a power/hypertrophy program - colin.id</title>
+    <meta name="description" content="How I design a power/hypertrophy program to meet my (mostly aesthetic) goals">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐻</text></svg>">
+    <meta name="generator" content="statisch">
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      * {
+        margin: 0;
+      }
+
+      img, picture, video, canvas, svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      :root {
+        --max-width: 45rem;
+        --font-main: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+        --font-size: 20px;
+        --background-color: #fffff8;
+        --text-color: #111;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background-color: #111;
+          --text-color: #fffff8;
+        }
+      }
+
+      html, body {
+        height: 100%
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--background-color);
+        margin: 0px auto;
+        max-width: var(--max-width);
+        line-height: 1.5;
+        font-family: var(--font-main);
+        font-size: var(--font-size);
+        color: var(--text-color);
+        text-decoration: none;
+        padding: 0 1rem;
+      }
+      a {
+        color: var(--text-color);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      a:before {
+          content:"{"
+      }
+      a:after {
+          content:"}"
+      }
+      a:hover, a:focus {
+          background-color: var(--text-color);
+          color: var(--background-color);
+          text-decoration:none
+      }
+      pre {
+        overflow-x: scroll;
+      }
+      pre > code {
+        display: block;
+        margin-left: 2rem;
+        font-size: 0.95rem;
+      }
+      code {
+        font-size: 1rem;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        line-height: 1.2;
+        margin: 1.5rem 0;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      h2 {
+        font-size: 1.17em;
+      }
+
+      h3 {
+        font-size: 1em;
+      }
+
+      h4 {
+        font-size: 0.83em;
+      }
+
+      header nav ul{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        padding: 0;
+        margin: 0.75rem 0;
+      }
+      header nav ul li {
+        list-style: none;
+      }
+      header nav ul li.active-nav-item a {
+        background-color: var(--text-color);
+        color: var(--background-color);
+      }
+      main {
+        margin: 1rem 0;
+        flex: 1 0 auto;
+      }
+      footer {
+        flex-shrink: 0;
+        font-size: 16px;
+      }
+      footer > p {
+        text-align: right;
+      }
+      hr {
+        margin: 0;
+      }
+      p {
+        margin: 1.5rem 0;
+      }
+      article.posts {
+        display: flex;
+      }
+      article.posts time {
+        flex: 0 0 7rem;
+        margin-right: 1.5rem;
+      }
+      .skip-to-main-content-link {
+        position: absolute;
+        left: -9999px;
+        z-index: 999;
+        padding: 1em;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        opacity: 0;
+      }
+      .skip-to-main-content-link:focus {
+        left: 1rem;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main" class="skip-to-main-content-link">Skip to main content</a>
+    <header>
+      <nav>
+        <ul>
+          <li >
+            <a href="/">colin.id</a>
+          </li>
+          <li >
+            <a href="/posts" >Posts</a>
+          </li>
+          <li >
+            <a href="/projects">Projects</a>
+          </li>
+          <li >
+            <a href="/now">Now</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <hr>
+    <main id="main">
+      <article>
+  <h1>Designing a power/hypertrophy program</h1>
+  <p><em>Posted on <time datetime="2024-02-11">2024-02-11</em></p>
+  <hr>
+  <blockquote>
+  <p>
+They say that good artists copy and great artists adopt an existing power/hypertrophy program.  </p>
+</blockquote>
+<p>
+I’ve been lifting consistently for about 5 years, mostly with powerlifing programs (Stronglifts, Ketogains, 5/3/1).
+I’m at a point where I’m pretty happy with my PRs (minus my bench) and feel like I’m not going to make a ton of
+progress without a.) gaining more weight that I’m comfortable with and b.) risking injury or constant soreness.
+So, I’m in the market for a new program – mostly focused on hypertrophy, but retaining most of my strength (even if
+my PRs won’t go up).</p>
+<h2>
+My criteria</h2>
+<p>
+What am I looking for in a program?</p>
+<p>
+First, I’m looking to balance hypertrophy with strength. I like getting a pump, but
+also feel like I’m wasting my time if I’m not lifting close to my max occasionally.</p>
+<p>
+Second, I’d like to lift 4-6 times a week. Any fewer and I feel restless and over-recovered.
+Only with very high volume programs like 5/3/1 Building the Monolith do I feel like I need the
+recovery that 3 sessions a week allows for.</p>
+<p>
+Along with that, I’d like to keep my sessions to fewer than 100 minutes.
+Combined with my walk to the gym (about 30 minutes round-trip), ~2.25 hours
+is the maximum amount of time I’d like to spend on this hobby.</p>
+<p>
+Third, I want to be able to bring my experience and preferences to adapt the program to my liking.
+After 5 years, I know what I like and what I don’t. I have a rough idea of what works for me and
+what’s a waste of time. For example, I know I like compound lifts and super sets; I know I dislike overcomplicated
+setups with bands.</p>
+<h2>
+My goals</h2>
+<p>
+I have a few points of my physique that I’d like to improve or at least train more consistently than
+I’ve been using other programs.</p>
+<ol>
+  <li>
+    <p>
+My back has always been a strong point in terms of recovery. I can pour volume into it and
+be ready to train again within a day or two. However, I want to improve back thickness.
+<strong>I’ll incorporate Meadows rows, supported rows, etc. to focus on isolating my lats and mid back.</strong>    </p>
+  </li>
+  <li>
+    <p>
+Delts, delts, delts. I feel they’re essentially to building an aesthetic taper and I’ve noticed that
+most powerlifting programs neglect them since they’re not essential to the big three. <strong>I want to do more
+delt work than just barbell overhead pressing, especially focusing on side delts and rear delts</strong>    </p>
+  </li>
+  <li>
+    <p>
+Legs. My legs have always been a strong point in terms of strength, but I’ve never felt that they’ve looked
+the part. <strong>Plan to incorporate more time-under-tension and volume into quads and hamstrings</strong>    </p>
+  </li>
+  <li>
+    <p>
+Triceps. Like many lifters, I think I spent too much time early on focusing on biceps or neglecting arms
+altogether. <strong>High volume is key here, focusing on feeling the stretch and squeeze and avoiding using either
+shoulders/chest to cheat the movement</strong>    </p>
+  </li>
+</ol>
+<h2>
+The program</h2>
+<p>
+With all that in mind, I’ve landed on an adaptation of PHAT (Power/Hypertrophy Adaptive Training) from Layne Norton.
+The rough breakdown of PHAT is that you lift 5 days per week – 2 of them power days (upper/lower) and
+3 of them hypertrophy days (chest + arms/back + shoulders/legs).</p>
+<p>
+It hits my goals of balancing strength and hypertrophy and is right in the middle of the frequency range
+that I’d like to stay within.</p>
+<p>
+However, the prescribed (possibly recommended?) exercises are where I’ll deviate.
+Norton favors dumbbell bench presses over barbell bench presses for both power and hypertrophy and
+does not include any main exercises in the power days for deadlifting.</p>
+<p>
+I briefly thought about upping the power days to three, one for shoulders + back and one for chest and back,
+but I worry about recovery with only one rest day. So, I’ll give my front delts a rest from overhead pressing and hope
+that incline bench + bench covers it.</p>
+<p>
+Deadlifts are easy to incorporate by just adding to the lower power day and alternating between weeks as to which
+comes first in the day.</p>
+<h2>
+Breakdown</h2>
+<ul>
+  <li>
+Day 1: Upper Power    <ul>
+      <li>
+Main power movements        <ul>
+          <li>
+Bench Press, 3x3          </li>
+          <li>
+Supported Row, 3x5          </li>
+        </ul>
+      </li>
+      <li>
+Secondary power movement        <ul>
+          <li>
+Incline Bench Press/Decline Bench Press, 3x3          </li>
+          <li>
+Kroc Row, 3x10-15          </li>
+        </ul>
+      </li>
+      <li>
+Accessory movements        <ul>
+          <li>
+Weighted pullups, 3x6 superset with:          </li>
+          <li>
+Weighted dips, 3x10          </li>
+          <li>
+Heavy loaded bicep curl (hammer/dumbbell/EZ bar/straight bar), 3x6 superset with:          </li>
+          <li>
+Skull crushers, 3x6          </li>
+          <li>
+Lat pulldown, 3x8 superset with:          </li>
+          <li>
+Side lateral raise, 3x10          </li>
+          <li>
+Concentration curl, 3x5 superset with:          </li>
+          <li>
+Overhead tricep extension, 3x6          </li>
+          <li>
+Cable side lateral raise, 3x8 superset with:          </li>
+          <li>
+Cable face pull, 3x15-20          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+Day 2: Lower Power    <ul>
+      <li>
+Main power movements        <ul>
+          <li>
+Squat, 3x3          </li>
+          <li>
+Deadlift, 3x3          </li>
+        </ul>
+      </li>
+      <li>
+Accessory movements        <ul>
+          <li>
+Leg press, 3x6          </li>
+          <li>
+Glute ham raise, 2x8          </li>
+          <li>
+Leg extensions, 3x10          </li>
+          <li>
+Seated leg curls, 3x10          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+Day 3: Back + Shoulder Hypertrophy    <ul>
+      <li>
+Meadows row, 3x10      </li>
+      <li>
+Upright row, 3x12-15      </li>
+      <li>
+Supported row, 3x10      </li>
+      <li>
+Machine shoulder press, 3x10      </li>
+      <li>
+Lat pulldown, 3x10 superset with:      </li>
+      <li>
+Side lateral raise, 3x15-20, last set to failure - descending in weight      </li>
+      <li>
+Seated cable row, 3x10 superset with:      </li>
+      <li>
+Cable side lateral raise, 3x10      </li>
+      <li>
+Reverse pec deck, 3x12      </li>
+      <li>
+Reverse dumbbell fly, 3x10 superset with:      </li>
+      <li>
+Dumbbell shrugs, 3x25      </li>
+    </ul>
+  </li>
+  <li>
+Day 4: Leg Hypertrophy    <ul>
+      <li>
+Barbell squat/barbell pause squat, 3x8      </li>
+      <li>
+Romanian deadlift, 3x8-12      </li>
+      <li>
+Leg press, 3x10 with a slow (&gt;3 sec) eccentric      </li>
+      <li>
+Seated leg curl, 3x10 with a pause and slow eccentric      </li>
+      <li>
+Hack squat, 3x10      </li>
+      <li>
+Laying leg curl, 3x15 with a slow eccentric      </li>
+      <li>
+Leg extension, 3x10 with a slow eccentric      </li>
+    </ul>
+  </li>
+  <li>
+Day 5: Chest + Arm Hypertrophy    <ul>
+      <li>
+Dumbbell bench press, 3x8      </li>
+      <li>
+Dumbbell incline press, 3x10 with a pause at the bottom      </li>
+      <li>
+Machine chest press, 3x10 superset with:      </li>
+      <li>
+Pullups, 3x8      </li>
+      <li>
+Single arm supinated pulldown (thanks John Meadows), 3x8-12 superset with:      </li>
+      <li>
+Side lateral raises, 3x15      </li>
+      <li>
+Pec deck, 3x10 superset with:      </li>
+      <li>
+Reverse pec deck, 3x12      </li>
+      <li>
+Preacher curls, 3x10 superset with:      </li>
+      <li>
+Seated overhead tricep extension, 3x15      </li>
+      <li>
+Incline seated bicep curls, 3x10 superset with:      </li>
+      <li>
+Incline Tate press, 3x12      </li>
+      <li>
+Tricep pushdown, 3x15 giantset with:      </li>
+      <li>
+Cable side lateral raise, 3x10 and:      </li>
+      <li>
+Face pulls, 3x15-20 and:      </li>
+      <li>
+Plate shrugs, 3x25      </li>
+    </ul>
+  </li>
+</ul>
+<p>
+Massive amount of text, but big things are:</p>
+<ul>
+  <li>
+Decent amount of accessory exercises, usually done in superset  </li>
+  <li>
+Incorporating pauses and slow eccentrics on hypertrophy days  </li>
+  <li>
+Training side and rear delts three times a week  </li>
+  <li>
+Eliminating barbell rows from back training (I find I use my legs too much and my lower back doesn’t like it)  </li>
+  <li>
+Highly reducing front delt training, relying on bench/incline bench  </li>
+</ul>
+
+</article>
+
+    </main>
+    
+    <hr>
+    <footer>
+      <p><em>Made with <a href="https://github.com/sw3dish/statisch">statisch</a></em></p>
+    </footer>
+    
+  </body>
+</html>
