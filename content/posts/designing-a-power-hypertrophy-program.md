@@ -1,7 +1,7 @@
 ---%%%---
 title = "Designing a power/hypertrophy program"
 description = "How I design a power/hypertrophy program to meet my (mostly aesthetic) goals"
-published_date = "2024-02-11"
+published_date = "2024-02-27"
 template = "post"
 tags = ["gym", "bodybuilding"]
 ---%%%---
